@@ -15,7 +15,7 @@ body {
 /* SECTION */
 section {
   padding: 100px 20px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   text-align: center;
 }
@@ -48,24 +48,30 @@ h1 {
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* HOVER */
 .card:hover {
   transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* FOTO */
-.foto {
+/* FOTO GRID */
+.foto-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
   margin-top: 50px;
 }
 
-.foto img {
-  width: 300px;
+.foto-box {
+  max-width: 300px;
+}
+
+.foto-box img {
+  width: 100%;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.foto p {
+.foto-box p {
   margin-top: 10px;
   font-size: 14px;
   opacity: 0.8;
@@ -106,21 +112,32 @@ h1 {
 
   <h1>My Skills</h1>
 
-  <!-- DESKRIPSI MENARIK -->
+  <!-- DESKRIPSI -->
   <p class="desc">
     Saya memiliki kemampuan dalam komunikasi dan kreativitas visual yang terus saya kembangkan. 
-    Dengan pengalaman sebagai pembicara dan ketertarikan dalam dunia desain, saya mampu menyampaikan ide dengan jelas 
-    sekaligus menciptakan karya visual yang menarik dan bermakna.
+    Dengan pengalaman sebagai MC dalam kegiatan formal organisasi serta minat dalam desain dan menggambar, 
+    saya mampu menyampaikan ide dengan percaya diri sekaligus menciptakan karya yang menarik dan bermakna.
   </p>
 
   <!-- SKILLS -->
-  <div class="card">Public Speaking</div>
-  <div class="card">Desain & Menggambar</div>
+  <div class="card"> Public Speaking</div>
+  <div class="card"> Desain & Menggambar</div>
 
-  <!-- FOTO DOKUMENTASI -->
-  <div class="foto">
-    <img src="mc.jpg" alt="Foto MC">
-    <p>Dokumentasi saat menjadi MC dalam sebuah acara</p>
+  <!-- FOTO -->
+  <div class="foto-container">
+
+    <!-- GAMBARAN SAYA -->
+    <div class="foto-box">
+      <img src="foto G2.jpeg" alt="Foto Fitri">
+      <p>Foto Profil Fitri Sayidah</p>
+    </div>
+
+    <!-- FOTO MC -->
+    <div class="foto-box">
+      <img src="foto G3.jpeg" alt="Foto MC">
+      <p>Dokumentasi saat menjadi MC dalam kegiatan organisasi pada acara formal LK 2</p>
+    </div>
+
   </div>
 
 </section>
