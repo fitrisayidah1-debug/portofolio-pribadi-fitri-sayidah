@@ -1,76 +1,128 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f8ff;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+  background: #0f172a;
+  color: white;
 }
 
 /* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
-  background: #2b6cb0;
-  color: white;
-  padding: 15px;
+  padding: 20px 50px;
+  position: fixed;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
 }
 
 nav ul {
   display: flex;
+  gap: 20px;
   list-style: none;
-  gap: 15px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #60a5fa;
 }
 
 /* HOME */
 .home {
+  height: 100vh;
   text-align: center;
-  padding: 50px;
+  padding-top: 120px;
+  background: linear-gradient(to right, #1e3a8a, #0f172a);
 }
 
 .home img {
-  width: 150px;
+  width: 160px;
   border-radius: 50%;
-  border: 4px solid #2b6cb0;
+  border: 3px solid #60a5fa;
+}
+
+.home h1 {
+  margin-top: 20px;
+  font-size: 32px;
+}
+
+.home p {
+  margin: 10px 0;
+  color: #cbd5e1;
 }
 
 .btn {
   display: inline-block;
   margin-top: 15px;
-  padding: 10px 20px;
-  background: #25D366;
+  padding: 12px 25px;
+  background: #60a5fa;
   color: white;
+  border-radius: 30px;
   text-decoration: none;
-  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #3b82f6;
 }
 
 /* SECTION */
 section {
-  padding: 40px;
+  padding: 100px 50px;
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
 }
 
 /* SKILLS */
 .skill {
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .bar {
-  background: #ddd;
+  height: 10px;
+  background: #1e293b;
   border-radius: 10px;
 }
 
 .value {
   height: 10px;
-  background: #2b6cb0;
+  background: linear-gradient(to right, #60a5fa, #2563eb);
   border-radius: 10px;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  background: #2b6cb0;
-  color: white;
-  padding: 10px;
+  padding: 20px;
+  background: #020617;
+}
+
+/* ANIMASI */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
