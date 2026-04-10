@@ -4,12 +4,96 @@
 <meta charset="UTF-8">
 <title>Skills</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+body {
+  font-family: "Times New Roman", serif;
+  background: linear-gradient(to right, #0f172a, #1e3a8a);
+  color: white;
+}
+
+/* SECTION */
+section {
+  padding: 100px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+/* JUDUL */
+h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+/* DESKRIPSI */
+.desc {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 40px;
+  opacity: 0.85;
+  line-height: 1.8;
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  margin: 15px;
+  border-radius: 20px;
+  display: inline-block;
+  width: 250px;
+  transition: 0.4s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* HOVER */
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* FOTO */
+.foto {
+  margin-top: 50px;
+}
+
+.foto img {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.foto p {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ANIMASI */
+.fade-in {
+  animation: fade 1s ease-in;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
 </head>
 
 <body class="fade-in">
 
 <nav>
-  <h2>Fitri</h2>
+  <h2>Fitri Sayidah</h2>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -19,13 +103,25 @@
 </nav>
 
 <section>
-  <h1>Skills</h1>
 
-  <div class="card">Digital Marketing</div>
-  <div class="card">Business Plan</div>
-  <div class="card">Design Thinking</div>
-  <div class="card">Content Creation</div>
+  <h1>My Skills</h1>
+
+  <!-- DESKRIPSI MENARIK -->
+  <p class="desc">
+    Saya memiliki kemampuan dalam komunikasi dan kreativitas visual yang terus saya kembangkan. 
+    Dengan pengalaman sebagai pembicara dan ketertarikan dalam dunia desain, saya mampu menyampaikan ide dengan jelas 
+    sekaligus menciptakan karya visual yang menarik dan bermakna.
+  </p>
+
+  <!-- SKILLS -->
   <div class="card">Public Speaking</div>
+  <div class="card">Desain & Menggambar</div>
+
+  <!-- FOTO DOKUMENTASI -->
+  <div class="foto">
+    <img src="mc.jpg" alt="Foto MC">
+    <p>Dokumentasi saat menjadi MC dalam sebuah acara</p>
+  </div>
 
 </section>
 
