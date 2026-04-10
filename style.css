@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f8ff;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  background: #2b6cb0;
+  color: white;
+  padding: 15px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* HOME */
+.home {
+  text-align: center;
+  padding: 50px;
+}
+
+.home img {
+  border-radius: 50%;
+  width: 150px;
+}
+
+/* SECTION */
+section {
+  padding: 40px;
+}
+
+/* SKILLS */
+.skill {
+  margin: 10px 0;
+}
+
+.bar {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.value {
+  height: 10px;
+  background: #2b6cb0;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background: #2b6cb0;
+  color: white;
+  padding: 10px;
+}
