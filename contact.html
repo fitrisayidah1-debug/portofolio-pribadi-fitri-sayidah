@@ -4,12 +4,104 @@
 <meta charset="UTF-8">
 <title>Contact</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+body {
+  font-family: "Times New Roman", serif;
+  background: linear-gradient(to right, #0f172a, #1e3a8a);
+  color: white;
+}
+
+/* SECTION */
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* JUDUL */
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* BOX */
+.contact-box {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* TEXT */
+.contact-box p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+/* WA */
+.wa {
+  background: #25D366;
+}
+
+.wa:hover {
+  transform: scale(1.1);
+}
+
+/* IG */
+.ig {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.ig:hover {
+  transform: scale(1.1);
+}
+
+/* EMAIL */
+.email {
+  background: #3b82f6;
+}
+
+.email:hover {
+  transform: scale(1.1);
+}
+
+/* ANIMASI */
+.fade-in {
+  animation: fade 1s ease-in;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
 </head>
 
 <body class="fade-in">
 
 <nav>
-  <h2>Fitri</h2>
+  <h2>Fitri Sayidah</h2>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -19,12 +111,26 @@
 </nav>
 
 <section>
-  <h1>Contact</h1>
 
-  <p>Email: fitrisayidah1@gmail.com</p>
-  <p>Instagram: fitri sayidah</p>
+  <h1>Contact Me</h1>
 
-  <a href="https://wa.me/qr/J6GIGWQFZRQAE1">WhatsApp</a>
+  <div class="contact-box">
+    <p> Email: fitrisayidah1@gmail.com</p>
+    <p> Hubungi saya melalui media berikut:</p>
+
+    <!-- BUTTON -->
+    <a href="https://wa.me/qr/J6GIGWQFZRQAE1" target="_blank" class="btn wa">
+      WhatsApp
+    </a>
+
+    <a href="mailto:fitrisayidah1@gmail.com" class="btn email">
+      Email
+    </a>
+
+    <a href="https://www.instagram.com/si_sayidah?igsh=Z2h0YW9lajlybnB3" target="_blank" class="btn ig">
+      Instagram
+    </a>
+  </div>
 
 </section>
 
