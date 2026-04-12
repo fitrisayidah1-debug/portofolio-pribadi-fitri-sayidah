@@ -3,94 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <title>About</title>
+
 <link rel="stylesheet" href="style.css">
+
+<!-- AOS ANIMATION -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 body {
   font-family: "Times New Roman", serif;
-  background: linear-gradient(to right, #0f172a, #1e3a8a);
   color: white;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND PARALLAX */
+.parallax {
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  filter: brightness(0.4);
 }
 
 /* CONTAINER */
 section {
   padding: 100px 20px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
 /* JUDUL */
 h1 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 40px;
+  font-size: 45px;
+  margin-bottom: 50px;
   letter-spacing: 2px;
 }
 
-/* CARD GLASS */
+/* CARD */
 .box {
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  padding: 25px;
-  border-radius: 20px;
-  margin-bottom: 25px;
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
   transition: 0.4s;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .box:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transform: scale(1.03);
 }
 
-/* SUB JUDUL */
+/* SUB */
 h3 {
   text-align: center;
   margin-bottom: 15px;
-  color: #93c5fd;
+  color: #60a5fa;
 }
 
 /* LIST */
 ul {
-  text-align: center;
   list-style: none;
   padding: 0;
+  text-align: center;
 }
 
 ul li {
-  margin: 8px 0;
+  margin: 10px 0;
 }
 
 /* PUISI */
 .puisi {
-  font-style: italic;
   text-align: center;
+  font-style: italic;
   line-height: 2;
   font-size: 17px;
 }
 
-/* ANIMASI */
-.fade-in {
-  animation: fade 1s ease-in;
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
 }
 
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #60a5fa;
 }
 </style>
 
 </head>
 
-<body class="fade-in">
+<body>
 
+<!-- BACKGROUND -->
+<div class="parallax"></div>
+
+<!-- NAV -->
 <nav>
   <h2>Fitri Sayidah</h2>
   <ul>
@@ -103,57 +131,67 @@ ul li {
 
 <section>
 
-  <h1>About Me</h1>
+<h1 data-aos="fade-down">About Me</h1>
 
-  <!-- BIODATA -->
-  <div class="box">
-    <h3>Biodata</h3>
-    <p><b>Nama:</b> Fitri Sayidah</p>
-    <p>Saya adalah mahasiswa Bisnis Digital yang memiliki ketertarikan dalam dunia bisnis, kreativitas, dan teknologi. Saya senang belajar hal baru dan terus mengembangkan potensi diri.</p>
+<!-- BIODATA -->
+<div class="box" data-aos="fade-right">
+  <h3>Biodata</h3>
+  <p><b>Nama:</b> Fitri Sayidah</p>
+  <p>
+    Saya adalah mahasiswa Bisnis Digital yang memiliki ketertarikan dalam dunia bisnis, kreativitas, dan teknologi.
+    Saya memiliki semangat tinggi untuk berkembang dan menciptakan ide-ide inovatif di era digital.
+  </p>
+</div>
+
+<!-- PENDIDIKAN -->
+<div class="box" data-aos="fade-left">
+  <h3>Pendidikan</h3>
+  <p>Madrasah Al Mukaromah (2017)</p>
+  <p>SMP IT Al Gina (2020)</p>
+  <p>SMK Al Gina (2023)</p>
+  <p><b>Universitas Yatsi Madani (Sekarang)</b></p>
+</div>
+
+<!-- MINAT -->
+<div class="box" data-aos="fade-right">
+  <h3>Minat & Keahlian</h3>
+  <ul>
+    <li>🎤 Public Speaking</li>
+    <li>🎨 Desain & Menggambar</li>
+    <li>✍️ Menulis Puisi</li>
+  </ul>
+</div>
+
+<!-- PUISI -->
+<div class="box" data-aos="zoom-in">
+  <h3>Puisi</h3>
+  <p><b>“Langkah dalam Mimpi”</b></p>
+
+  <div class="puisi">
+    Dalam sunyi aku melangkah,<br>
+    Membawa harapan yang tak pernah lelah.<br><br>
+
+    Dunia luas terbentang di depan mata,<br>
+    Mengajarkanku arti usaha dan doa.<br><br>
+
+    Meski ragu kadang menyapa,<br>
+    Aku tetap percaya pada mimpi yang ada.<br><br>
+
+    Karena setiap langkah kecil hari ini,<br>
+    Adalah jalan menuju masa depan nanti.
   </div>
-
-  <!-- PENDIDIKAN -->
-  <div class="box">
-    <h3>Pendidikan</h3>
-    <p>Madrasah Al Mukaromah (2017)</p>
-    <p>SMP IT Al Gina (2020)</p>
-    <p>SMK Al Gina (2023)</p>
-    <p><b>Universitas Yatsi Madani (Sekarang)</b></p>
-  </div>
-
-  <!-- MINAT -->
-  <div class="box">
-    <h3>Minat & Keahlian</h3>
-    <ul>
-      <li> Public Speaking</li>
-      <li> Desain & Menggambar</li>
-      <li> Menulis Puisi</li>
-    </ul>
-  </div>
-
-  <!-- PUISI -->
-  <div class="box">
-    <h3>Puisi</h3>
-
-    <p><b>“Langkah dalam Mimpi”</b></p>
-
-    <div class="puisi">
-      Dalam sunyi aku melangkah,<br>
-      Membawa harapan yang tak pernah lelah.<br><br>
-
-      Dunia luas terbentang di depan mata,<br>
-      Mengajarkanku arti usaha dan doa.<br><br>
-
-      Meski ragu kadang menyapa,<br>
-      Aku tetap percaya pada mimpi yang ada.<br><br>
-
-      Karena setiap langkah kecil hari ini,<br>
-      Adalah jalan menuju masa depan nanti.
-    </div>
-
-  </div>
+</div>
 
 </section>
+
+<!-- AOS SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 1000,
+  once: true
+});
+</script>
 
 </body>
 </html>
