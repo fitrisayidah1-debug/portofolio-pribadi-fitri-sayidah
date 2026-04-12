@@ -8,48 +8,140 @@
 <style>
 body {
   font-family: "Times New Roman", serif;
-  background: linear-gradient(to right, #0f172a, #1e3a8a);
+  margin: 0;
   color: white;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND APPLE STYLE */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at top, rgba(96,165,250,0.3), transparent 60%),
+    linear-gradient(to bottom, #020617, #0f172a);
+  z-index: -2;
+}
+
+/* BINTANG HALUS */
+.bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.12;
+}
+
+/* ⭐ BINTANG JATUH */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(white, transparent);
+  transform: rotate(45deg);
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) translateX(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(900px) translateX(300px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(20px);
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+nav a:hover {
+  color: #60a5fa;
+  opacity: 1;
 }
 
 /* SECTION */
 section {
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
 }
 
-/* JUDUL */
+/* JUDUL APPLE STYLE */
 h1 {
-  font-size: 40px;
+  font-size: 50px;
   margin-bottom: 20px;
+  background: linear-gradient(to right, #ffffff, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* BOX */
 .contact-box {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  padding: 30px;
-  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 30px;
   max-width: 500px;
   margin: auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  box-shadow: 
+    0 10px 40px rgba(0,0,0,0.6),
+    inset 0 0 20px rgba(255,255,255,0.05);
+  transition: 0.4s;
+}
+
+/* GLOW EFFECT */
+.contact-box:hover {
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.8),
+    0 0 30px rgba(96,165,250,0.4);
 }
 
 /* TEXT */
 .contact-box p {
   margin: 10px 0;
   font-size: 18px;
+  opacity: 0.85;
 }
 
 /* BUTTON */
 .btn {
   display: inline-block;
   margin: 10px;
-  padding: 12px 25px;
+  padding: 12px 28px;
   border-radius: 30px;
   text-decoration: none;
   color: white;
   transition: 0.3s;
+  font-size: 15px;
 }
 
 /* WA */
@@ -57,17 +149,9 @@ h1 {
   background: #25D366;
 }
 
-.wa:hover {
-  transform: scale(1.1);
-}
-
 /* IG */
 .ig {
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-}
-
-.ig:hover {
-  transform: scale(1.1);
 }
 
 /* EMAIL */
@@ -75,8 +159,10 @@ h1 {
   background: #3b82f6;
 }
 
-.email:hover {
-  transform: scale(1.1);
+/* HOVER GLOW */
+.btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
 
 /* ANIMASI */
@@ -100,6 +186,12 @@ h1 {
 
 <body class="fade-in">
 
+<!-- BACKGROUND -->
+<div class="bg"></div>
+
+<!-- BINTANG -->
+<div class="stars" id="stars"></div>
+
 <nav>
   <h2>Fitri Sayidah</h2>
   <ul>
@@ -115,10 +207,9 @@ h1 {
   <h1>Contact Me</h1>
 
   <div class="contact-box">
-    <p> Email: fitrisayidah1@gmail.com</p>
-    <p> Hubungi saya melalui media berikut:</p>
+    <p>Email: fitrisayidah1@gmail.com</p>
+    <p>Hubungi saya melalui media berikut:</p>
 
-    <!-- BUTTON -->
     <a href="https://wa.me/qr/J6GIGWQFZRQAE1" target="_blank" class="btn wa">
       WhatsApp
     </a>
@@ -133,6 +224,28 @@ h1 {
   </div>
 
 </section>
+
+<!-- SCRIPT BINTANG -->
+<script>
+const starsContainer = document.getElementById("stars");
+
+function createStar() {
+  const star = document.createElement("div");
+  star.classList.add("star");
+
+  star.style.left = Math.random() * window.innerWidth + "px";
+  star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  star.style.height = (Math.random() * 80 + 50) + "px";
+
+  starsContainer.appendChild(star);
+
+  setTimeout(() => {
+    star.remove();
+  }, 5000);
+}
+
+setInterval(createStar, 250);
+</script>
 
 </body>
 </html>
