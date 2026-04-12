@@ -1,8 +1,10 @@
+TLG INI TAMBAHKAN ELEMEN SEPERTI WEB APLEKETIKA DI KLIK SKILL ADA ELEMN SEPERTI TRANSISI SLIDENYA 
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <title>Skills</title>
+<link rel="stylesheet" href="style.css">
 
 <style>
 body {
@@ -12,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* BACKGROUND */
+/* BACKGROUND APPLE STYLE */
 .bg {
   position: fixed;
   width: 100%;
@@ -72,6 +74,10 @@ nav {
   backdrop-filter: blur(20px);
 }
 
+nav h2 {
+  letter-spacing: 1px;
+}
+
 nav ul {
   display: flex;
   gap: 25px;
@@ -80,10 +86,12 @@ nav ul {
 nav a {
   color: white;
   text-decoration: none;
+  font-size: 15px;
   opacity: 0.8;
 }
 
 nav a:hover {
+  opacity: 1;
   color: #60a5fa;
 }
 
@@ -95,10 +103,12 @@ section {
   text-align: center;
 }
 
-/* JUDUL */
+/* JUDUL APPLE STYLE */
 h1 {
   font-size: 55px;
-  background: linear-gradient(to right, #fff, #93c5fd);
+  font-weight: 500;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #ffffff, #93c5fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -109,9 +119,11 @@ h1 {
   margin: auto;
   margin-bottom: 70px;
   opacity: 0.8;
+  line-height: 1.9;
+  font-size: 17px;
 }
 
-/* CARD */
+/* CARD PREMIUM */
 .card {
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(20px);
@@ -120,146 +132,125 @@ h1 {
   border-radius: 30px;
   display: inline-block;
   width: 260px;
-  cursor: pointer;
   transition: 0.4s;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.5),
+    inset 0 0 20px rgba(255,255,255,0.05);
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
+/* HOVER HALUS */
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(96,165,250,0.5);
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.7),
+    0 0 20px rgba(96,165,250,0.4);
 }
 
 /* FOTO */
 .foto-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 50px;
   margin-top: 80px;
-  flex-wrap: wrap;
+}
+
+.foto-box {
+  max-width: 320px;
+  transition: 0.4s;
+}
+
+.foto-box:hover {
+  transform: translateY(-10px);
 }
 
 .foto-box img {
-  width: 300px;
-  border-radius: 25px;
-}
-
-/* MODAL APPLE STYLE */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
 }
 
-.modal-content {
-  background: rgba(255,255,255,0.08);
-  padding: 40px;
-  border-radius: 30px;
-  backdrop-filter: blur(20px);
-  transform: translateY(100px);
-  opacity: 0;
-  transition: 0.5s;
-  max-width: 400px;
-  text-align: center;
-}
-
-.modal.show .modal-content {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.close {
-  margin-top: 20px;
-  cursor: pointer;
-  color: #60a5fa;
+.foto-box p {
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 1.6;
 }
 </style>
+
 </head>
 
 <body>
 
+<!-- BACKGROUND -->
 <div class="bg"></div>
+
+<!-- BINTANG -->
 <div class="stars" id="stars"></div>
 
 <nav>
   <h2>Fitri Sayidah</h2>
   <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Skills</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
 <section>
 
-<h1>My Skills</h1>
+  <h1>My Skills</h1>
 
-<p class="desc">
-Saya menggabungkan komunikasi dan kreativitas visual untuk menciptakan pengalaman yang berkesan.
-</p>
+  <p class="desc">
+    Saya menggabungkan kemampuan komunikasi dan kreativitas visual untuk menciptakan pengalaman yang berkesan. 
+    Dengan pengalaman sebagai MC dalam acara formal serta ketertarikan dalam desain dan menggambar, 
+    saya mampu menyampaikan ide dengan percaya diri sekaligus menghasilkan karya yang bernilai estetika tinggi.
+  </p>
 
-<div class="card" onclick="openModal('design')">🎨 Desain & Menggambar</div>
-<div class="card" onclick="openModal('mc')">🎤 Public Speaking</div>
+  <!-- SKILLS -->
+  <div class="card">🎨 Desain & Menggambar</div>
+  <div class="card">🎤 Public Speaking</div>
 
-<div class="foto-container">
-  <img src="foto G2.jpeg">
-  <img src="foto G3.jpeg">
-</div>
+  <!-- FOTO -->
+  <div class="foto-container">
+
+    <div class="foto-box">
+      <img src="foto G2.jpeg">
+      <p>Hasil karya desain dan gambar yang saya buat sebagai bentuk eksplorasi kreativitas visual.</p>
+    </div>
+
+    <div class="foto-box">
+      <img src="foto G3.jpeg">
+      <p>Dokumentasi saat menjadi MC dalam kegiatan organisasi pada acara formal LK 2 dengan penuh percaya diri.</p>
+    </div>
+
+  </div>
 
 </section>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="modal-content" id="modalContent">
-    <h2 id="title"></h2>
-    <p id="desc"></p>
-    <div class="close" onclick="closeModal()">Tutup</div>
-  </div>
-</div>
-
+<!-- SCRIPT BINTANG -->
 <script>
-// ⭐ BINTANG
 const starsContainer = document.getElementById("stars");
 
-setInterval(() => {
+function createStar() {
   const star = document.createElement("div");
   star.classList.add("star");
-  star.style.left = Math.random()*window.innerWidth+"px";
-  star.style.animationDuration = (Math.random()*3+2)+"s";
+
+  star.style.left = Math.random() * window.innerWidth + "px";
+  star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  star.style.height = (Math.random() * 80 + 50) + "px";
+
   starsContainer.appendChild(star);
-  setTimeout(()=>star.remove(),5000);
-},250);
 
-// MODAL
-function openModal(type){
-  const modal = document.getElementById("modal");
-  const title = document.getElementById("title");
-  const desc = document.getElementById("desc");
-
-  if(type==="design"){
-    title.innerHTML="Desain & Menggambar";
-    desc.innerHTML="Saya memiliki kemampuan dalam menciptakan karya visual yang kreatif dan estetik.";
-  } else {
-    title.innerHTML="Public Speaking";
-    desc.innerHTML="Berpengalaman menjadi MC dalam kegiatan formal LK 2 dengan percaya diri dan profesional.";
-  }
-
-  modal.style.display="flex";
-  setTimeout(()=>modal.classList.add("show"),10);
+  setTimeout(() => {
+    star.remove();
+  }, 5000);
 }
 
-function closeModal(){
-  const modal = document.getElementById("modal");
-  modal.classList.remove("show");
-  setTimeout(()=>modal.style.display="none",300);
-}
+setInterval(createStar, 250);
 </script>
 
 </body>
