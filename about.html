@@ -52,11 +52,47 @@ body {
   background: radial-gradient(circle at top, rgba(96,165,250,0.2), transparent 70%);
 }
 
+/* ⭐ CONTAINER BINTANG JATUH */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ⭐ BINTANG JATUH */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(white, transparent);
+  opacity: 0.9;
+  transform: rotate(45deg);
+  animation: fall linear infinite;
+}
+
+/* ANIMASI BINTANG */
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) translateX(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(900px) translateX(300px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
 /* CONTAINER */
 section {
   padding: 100px 20px;
   max-width: 1000px;
   margin: auto;
+  position: relative;
+  z-index: 2;
 }
 
 /* JUDUL */
@@ -116,6 +152,8 @@ nav {
   padding: 20px 50px;
   background: rgba(0,0,0,0.5);
   backdrop-filter: blur(15px);
+  position: relative;
+  z-index: 2;
 }
 
 nav ul {
@@ -141,6 +179,9 @@ nav a:hover {
 <!-- BACKGROUND -->
 <div class="parallax"></div>
 
+<!-- ⭐ BINTANG JATUH -->
+<div class="stars" id="stars"></div>
+
 <!-- NAV -->
 <nav>
   <h2>Fitri Sayidah</h2>
@@ -156,7 +197,6 @@ nav a:hover {
 
 <h1 data-aos="fade-down">About Me</h1>
 
-<!-- BIODATA -->
 <div class="box" data-aos="fade-right">
   <h3>Biodata</h3>
   <p><b>Nama:</b> Fitri Sayidah</p>
@@ -166,7 +206,6 @@ nav a:hover {
   </p>
 </div>
 
-<!-- PENDIDIKAN -->
 <div class="box" data-aos="fade-left">
   <h3>Pendidikan</h3>
   <p>Madrasah Al Mukaromah (2017)</p>
@@ -175,17 +214,15 @@ nav a:hover {
   <p><b>Universitas Yatsi Madani (Sekarang)</b></p>
 </div>
 
-<!-- MINAT -->
 <div class="box" data-aos="fade-right">
   <h3>Minat & Keahlian</h3>
   <ul>
-    <li>🎤 Public Speaking</li>
-    <li>🎨 Desain & Menggambar</li>
-    <li>✍️ Menulis Puisi</li>
+    <li>Public Speaking</li>
+    <li> Desain & Menggambar</li>
+    <li> Menulis Puisi</li>
   </ul>
 </div>
 
-<!-- PUISI -->
 <div class="box" data-aos="zoom-in">
   <h3>Puisi</h3>
   <p><b>“Langkah dalam Mimpi”</b></p>
@@ -214,6 +251,26 @@ AOS.init({
   duration: 1000,
   once: true
 });
+
+/* ⭐ SCRIPT BINTANG JATUH */
+const starsContainer = document.getElementById("stars");
+
+function createStar() {
+  const star = document.createElement("div");
+  star.classList.add("star");
+
+  star.style.left = Math.random() * window.innerWidth + "px";
+  star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  star.style.height = (Math.random() * 80 + 50) + "px";
+
+  starsContainer.appendChild(star);
+
+  setTimeout(() => {
+    star.remove();
+  }, 5000);
+}
+
+setInterval(createStar, 300);
 </script>
 
 </body>
