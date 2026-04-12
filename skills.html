@@ -8,8 +8,83 @@
 <style>
 body {
   font-family: "Times New Roman", serif;
-  background: linear-gradient(to right, #0f172a, #1e3a8a);
+  margin: 0;
   color: white;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND LANGIT */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(to bottom, rgba(2,6,23,0.9), rgba(15,23,42,0.95)),
+    radial-gradient(circle at top, rgba(96,165,250,0.2), transparent 70%);
+  z-index: -2;
+}
+
+/* BINTANG HALUS */
+.bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.15;
+}
+
+/* ⭐ BINTANG JATUH */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(white, transparent);
+  transform: rotate(45deg);
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) translateX(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(900px) translateX(300px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(15px);
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #60a5fa;
 }
 
 /* SECTION */
@@ -22,81 +97,83 @@ section {
 
 /* JUDUL */
 h1 {
+  font-size: 45px;
   margin-bottom: 20px;
-  font-size: 40px;
+  letter-spacing: 2px;
 }
 
 /* DESKRIPSI */
 .desc {
   max-width: 700px;
   margin: auto;
-  margin-bottom: 40px;
-  opacity: 0.85;
+  margin-bottom: 50px;
+  opacity: 0.9;
   line-height: 1.8;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
 }
 
 /* CARD */
 .card {
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  padding: 25px;
+  backdrop-filter: blur(15px);
+  padding: 30px;
   margin: 15px;
-  border-radius: 20px;
+  border-radius: 25px;
   display: inline-block;
-  width: 250px;
+  width: 260px;
   transition: 0.4s;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  font-size: 18px;
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.05);
+  transform: translateY(-12px) scale(1.07);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
-/* FOTO GRID */
+/* FOTO */
 .foto-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 50px;
+  gap: 40px;
+  margin-top: 60px;
 }
 
 .foto-box {
   max-width: 300px;
+  transition: 0.4s;
+}
+
+.foto-box:hover {
+  transform: scale(1.05);
 }
 
 .foto-box img {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
 .foto-box p {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 14px;
-  opacity: 0.8;
-}
-
-/* ANIMASI */
-.fade-in {
-  animation: fade 1s ease-in;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 0.85;
 }
 </style>
 
 </head>
 
-<body class="fade-in">
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg"></div>
+
+<!-- ⭐ BINTANG -->
+<div class="stars" id="stars"></div>
 
 <nav>
   <h2>Fitri Sayidah</h2>
@@ -112,35 +189,54 @@ h1 {
 
   <h1>My Skills</h1>
 
-  <!-- DESKRIPSI -->
   <p class="desc">
-    Saya memiliki kemampuan dalam komunikasi dan kreativitas visual yang terus saya kembangkan. 
-    Dengan pengalaman sebagai MC dalam kegiatan formal organisasi serta minat dalam desain dan menggambar, 
-    saya mampu menyampaikan ide dengan percaya diri sekaligus menciptakan karya yang menarik dan bermakna.
+    Saya memiliki kemampuan dalam komunikasi dan kreativitas visual yang terus berkembang. 
+    Dengan pengalaman sebagai MC dalam kegiatan formal organisasi serta ketertarikan dalam desain dan menggambar, 
+    saya mampu menyampaikan ide dengan percaya diri serta menciptakan karya visual yang menarik dan bermakna.
   </p>
 
   <!-- SKILLS -->
-  <div class="card"> Desain & Menggambar</div>
-  <div class="card"> Public Speaking</div>
+  <div class="card">🎨 Desain & Menggambar</div>
+  <div class="card">🎤 Public Speaking</div>
 
   <!-- FOTO -->
   <div class="foto-container">
 
-    <!-- GAMBARAN SAYA -->
     <div class="foto-box">
-      <img src="foto G2.jpeg" alt="Foto Fitri">
-      <p>dokumentasi hasil gambaran saya</p>
+      <img src="foto G2.jpeg" alt="Gambar Saya">
+      <p>Hasil karya desain dan gambar yang saya buat sebagai bentuk ekspresi kreativitas.</p>
     </div>
 
-    <!-- FOTO MC -->
     <div class="foto-box">
-      <img src="foto G3.jpeg" alt="Foto MC">
-      <p>Dokumentasi saat menjadi MC dalam kegiatan organisasi pada acara formal LK 2</p>
+      <img src="foto G3.jpeg" alt="MC">
+      <p>Dokumentasi saat menjadi MC dalam kegiatan organisasi pada acara formal LK 2, membawakan acara dengan percaya diri dan profesional.</p>
     </div>
 
   </div>
 
 </section>
+
+<!-- SCRIPT BINTANG JATUH -->
+<script>
+const starsContainer = document.getElementById("stars");
+
+function createStar() {
+  const star = document.createElement("div");
+  star.classList.add("star");
+
+  star.style.left = Math.random() * window.innerWidth + "px";
+  star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  star.style.height = (Math.random() * 80 + 50) + "px";
+
+  starsContainer.appendChild(star);
+
+  setTimeout(() => {
+    star.remove();
+  }, 5000);
+}
+
+setInterval(createStar, 300);
+</script>
 
 </body>
 </html>
