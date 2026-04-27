@@ -1,10 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Home - Fitri</title>
-
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitri Sayidah</title>
 
 <style>
 body {
@@ -12,26 +12,20 @@ body {
   background: radial-gradient(circle at top, #0f172a, #020617);
   overflow-x: hidden;
   color: white;
+  margin: 0;
 }
 
-/* NAVBAR APPLE STYLE */
+/* NAVBAR */
 nav {
   position: fixed;
   width: 100%;
   top: 0;
-  left: 0;
   padding: 15px 50px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
   z-index: 999;
-}
-
-nav h2 {
-  font-size: 20px;
-  letter-spacing: 2px;
 }
 
 nav ul {
@@ -43,11 +37,6 @@ nav ul {
 nav a {
   color: white;
   text-decoration: none;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #60a5fa;
 }
 
 /* BINTANG */
@@ -55,7 +44,6 @@ nav a:hover {
   position: fixed;
   width: 100%;
   height: 100%;
-  pointer-events: none;
 }
 
 .star {
@@ -68,8 +56,8 @@ nav a:hover {
 }
 
 @keyframes fall {
-  0% { transform: translateY(-100px) translateX(0) rotate(45deg); opacity:1;}
-  100% { transform: translateY(900px) translateX(300px) rotate(45deg); opacity:0;}
+  0% { transform: translateY(-100px) translateX(0); opacity:1;}
+  100% { transform: translateY(900px) translateX(300px); opacity:0;}
 }
 
 /* HERO */
@@ -81,171 +69,186 @@ nav a:hover {
 .hero img {
   width: 170px;
   border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.3);
-  box-shadow: 0 0 30px rgba(96,165,250,0.8);
-  transition: 0.4s;
-}
-
-.hero img:hover {
-  transform: scale(1.05);
+  box-shadow: 0 0 30px #60a5fa;
 }
 
 .hero h1 {
-  margin-top: 20px;
-  font-size: 42px;
-  letter-spacing: 2px;
+  font-size: 40px;
 }
 
-/* TEXT KETIK */
 #typing {
   font-size: 20px;
-  margin-top: 10px;
   border-right: 2px solid white;
-  display: inline-block;
-  padding-right: 5px;
-  animation: blink 0.7s infinite;
-  text-shadow: 0 0 10px #60a5fa;
 }
 
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-/* DESKRIPSI GLASS */
+/* DESC */
 .desc {
-  max-width: 650px;
-  margin: 30px auto;
-  font-size: 17px;
-  line-height: 1.8;
+  max-width: 600px;
+  margin: 20px auto;
   background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 25px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-  transition: 0.4s;
-}
-
-.desc:hover {
-  transform: translateY(-5px);
+  padding: 20px;
+  border-radius: 20px;
 }
 
 /* BUTTON */
 .btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  padding: 10px 20px;
+  background: #2563eb;
+  border-radius: 20px;
   color: white;
   text-decoration: none;
-  transition: 0.3s;
 }
 
-.btn:hover {
-  transform: scale(1.1);
+/* SEARCH */
+.search-box {
+  text-align: center;
+  margin-top: 80px;
 }
 
-/* ANIMASI MASUK */
-.fade-in {
-  animation: fade 1.2s ease-in;
+.search-box input {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
 }
 
-@keyframes fade {
-  from { opacity:0; transform:translateY(40px);}
-  to { opacity:1; transform:translateY(0);}
+.search-box button {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #2563eb;
+  color: white;
+}
+
+/* CATEGORY */
+.categories {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.cat-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cat-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  width: 200px;
+}
+
+/* PORTFOLIO */
+.portfolio {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.portfolio-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* FOOTER */
+footer {
+  margin-top: 80px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.05);
 }
 </style>
-
 </head>
 
-<body class="fade-in">
+<body>
 
-<!-- BINTANG -->
 <div class="stars" id="stars"></div>
 
 <nav>
-  <h2>Fitri Sayidah</h2>
+  <h2>Fitri</h2>
   <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Skills</a></li>
+    <li><a href="#">Contact</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <img src="foto1.jpeg">
   <h1>Fitri Sayidah</h1>
-
-  <!-- TEXT KETIK -->
   <p id="typing"></p>
 
   <div class="desc">
-    Saya adalah mahasiswa Bisnis Digital yang memiliki semangat tinggi dalam dunia bisnis dan teknologi. 
-    Saya tertarik pada digital marketing, desain kreatif, serta pengembangan ide bisnis yang inovatif. 
-    Dengan kemampuan yang terus saya kembangkan, saya siap menciptakan solusi digital yang bermanfaat dan berdampak.
+    Mahasiswa Bisnis Digital yang fokus pada digital marketing dan desain kreatif.
   </div>
 
-  <a href="contact.html" class="btn">Hubungi Saya</a>
+  <a href="#" class="btn">Hubungi Saya</a>
 </section>
 
-<!-- SCRIPT BINTANG -->
-<script>
-const starsContainer = document.getElementById("stars");
+<!-- SEARCH -->
+<section class="search-box">
+  <h2>Cari 🔍</h2>
+  <input type="text" placeholder="Cari sesuatu...">
+  <button>Cari</button>
+</section>
 
-function createStar() {
+<!-- CATEGORY -->
+<section class="categories">
+  <h2>Kategori</h2>
+  <div class="cat-grid">
+    <div class="cat-card">💻 Digital Marketing</div>
+    <div class="cat-card">🎨 Desain</div>
+    <div class="cat-card">📱 Bisnis</div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio">
+  <h2>Project</h2>
+  <div class="portfolio-grid">
+    <div class="card">Website Hijab Shop</div>
+    <div class="card">UI Design</div>
+    <div class="card">Marketing Strategy</div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Fitri Sayidah</p>
+</footer>
+
+<script>
+/* BINTANG */
+setInterval(() => {
   const star = document.createElement("div");
   star.classList.add("star");
+  star.style.left = Math.random()*window.innerWidth+"px";
+  star.style.animationDuration = (Math.random()*3+2)+"s";
+  document.getElementById("stars").appendChild(star);
+  setTimeout(()=>star.remove(),5000);
+},200);
 
-  star.style.left = Math.random() * window.innerWidth + "px";
-  star.style.animationDuration = (Math.random() * 3 + 2) + "s";
-  star.style.height = (Math.random() * 80 + 50) + "px";
-
-  starsContainer.appendChild(star);
-
-  setTimeout(() => { star.remove(); }, 5000);
+/* TYPING */
+const texts = ["Mahasiswa 💻","Kreatif 🎨","Inovatif 🚀"];
+let i=0,j=0;
+function type(){
+  document.getElementById("typing").textContent=texts[i].slice(0,j++);
+  if(j>texts[i].length){j=0;i=(i+1)%texts.length;}
+  setTimeout(type,100);
 }
-
-setInterval(createStar, 200);
-</script>
-
-<!-- SCRIPT TYPING -->
-<script>
-const texts = [
-  "Mahasiswa Bisnis Digital 💻",
-  "Kreatif & Inovatif 🎨",
-  "Public Speaker 🎤",
-  "Siap Berkarya 🚀"
-];
-
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
-
-function type() {
-  if (count === texts.length) {
-    count = 0;
-  }
-
-  currentText = texts[count];
-  letter = currentText.slice(0, ++index);
-
-  document.getElementById("typing").textContent = letter;
-
-  if (letter.length === currentText.length) {
-    setTimeout(() => {
-      index = 0;
-      count++;
-      setTimeout(type, 300);
-    }, 1500);
-  } else {
-    setTimeout(type, 60);
-  }
-}
-
 type();
 </script>
 
 </body>
 </html>
+```
